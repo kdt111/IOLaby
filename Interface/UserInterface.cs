@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using IOLaby.Controllers;
 using IOLaby.Data.Users;
+using IOLaby;
 
 namespace IOLaby.Interface
 {
@@ -34,6 +35,15 @@ namespace IOLaby.Interface
 				ConsoleKey key = Console.ReadKey(true).Key;
 				switch (key)
 				{
+					case ConsoleKey.D1:
+						Application.DisplayGroup();
+						break;
+					case ConsoleKey.D2:
+						Application.DisplayCalendar();
+						break;
+					case ConsoleKey.D3:
+						Application.ModifyLesson();
+						break;
 					case ConsoleKey.Escape: // Wyście z pętli - wyjście z aplikacji
 						return;
 				}
@@ -42,6 +52,9 @@ namespace IOLaby.Interface
 
 		private void PrintMenu()
 		{
+			Console.WriteLine("1 - Wyświetl grupy");
+			Console.WriteLine("2 - Wyświetl terminarz");
+			Console.WriteLine("3 - Zmodyfikuj lekcje");
 			Console.WriteLine("[ESC] - Wyjście z aplikacji");
 		}
 	}

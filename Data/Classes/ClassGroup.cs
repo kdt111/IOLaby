@@ -14,11 +14,13 @@ namespace IOLaby.Data.Classes
 		public List<GradeGroup> GradeGroupList { get; set; }
 		public List<Lesson> LessonList { get; set; }
 
-		public ClassGroup()
+		public ClassGroup(string className)
 		{
+			ClassId = Database.NextClassId;
 			StudentList = new List<Student>();
 			GradeGroupList = new List<GradeGroup>();
 			LessonList = new List<Lesson>();
+			this.ClassName = className;
 		}
 
 		public bool ContainsStudent(BaseUser student)

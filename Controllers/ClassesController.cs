@@ -30,14 +30,14 @@ namespace IOLaby.Controllers
 			return database.GetUserClasses(userId);
 		}
 
-		public Dictionary<GradeGroup, Grade> GetUserGrades(int userId)
+		public Dictionary<GradeGroup, Grade> GetUserGrades(int userId, int classGroupId)
 		{
-			return database.GetUserGrades(userId);
+			return database.GetUserGrades(userId, classGroupId);
 		}
-
-		public Dictionary<ClassGroup, List<Atendence>> GetUserAtendances(int userId)
+		
+		public Dictionary<Lesson, Atendence> GetUserAtendances(int userId, int classGroupId)
 		{
-			return database.GetUserAtendances(userId);
+			return database.GetUserAtendances(userId, classGroupId);
 		}
 	}
 }
