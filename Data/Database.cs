@@ -6,7 +6,7 @@ using IOLaby.Data.Users;
 
 namespace IOLaby.Data
 {
-	class Database
+	public class Database
 	{
 		private static int nextLessonIndex = 0;
 		private static int nextUserIndex = 0;
@@ -40,6 +40,7 @@ namespace IOLaby.Data
 			return returnVal;
 		}
 
+		//TEST: Michał
 		public Lesson GetLessonData(Teacher teacher, int lessonId)
 		{
 			foreach(ClassGroup classGroup in ClassGroupList)
@@ -56,6 +57,7 @@ namespace IOLaby.Data
 			return null;
 		}
 
+		//TEST: Damian
 		public Lesson GetLesson(int lessonId)
 		{
 			foreach (ClassGroup classGroup in ClassGroupList)
@@ -85,6 +87,7 @@ namespace IOLaby.Data
 			return UserList.Find(u => u.UserId == userId);
 		}
 
+		//TEST: Jan
 		public List<ClassGroup> GetUserClasses(int userId)
 		{
 			List<ClassGroup> returnVal = new List<ClassGroup>();
@@ -108,7 +111,8 @@ namespace IOLaby.Data
 
 			return returnVal;
 		}
-	
+		
+		//TEST: Damian
 		public Dictionary<GradeGroup, Grade> GetUserGrades(int userId, int classGroupId)
 		{
 			Dictionary<GradeGroup, Grade> returnValue = new Dictionary<GradeGroup, Grade>();
@@ -132,6 +136,7 @@ namespace IOLaby.Data
 			return returnValue;
 		}
 
+		//TEST: Michał
 		public Dictionary<Lesson, Atendence> GetUserAtendances(int userId, int classGroupId)
 		{
 			Dictionary<Lesson, Atendence> returnValue = new Dictionary<Lesson, Atendence>();
@@ -155,10 +160,10 @@ namespace IOLaby.Data
 			return returnValue;
 		}
 
+		//TEST: Jan
 		public BaseUser ValidateUser(string login, string password)
 		{
-			BaseUser user = UserList.Find(u => u.Login == login && u.Password == password);
-			return user;
+			return UserList.Find(u => u.Login == login && u.Password == password);
 		}
 	
 		private void GenerateData()

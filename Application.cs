@@ -135,7 +135,7 @@ namespace IOLaby
 			if(user is Teacher)
             {
 				Console.Write("Podaj id lekcji do modyfikacji: ");
-				int lessonid = Int16.Parse(Console.ReadLine());
+				int lessonid = int.Parse(Console.ReadLine());
 				string topic, date;
 				Console.Write("Podaj nowy temat lekcji: ");
 				topic = Console.ReadLine();

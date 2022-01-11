@@ -5,7 +5,7 @@ using IOLaby.Data.Users;
 
 namespace IOLaby.Data.Classes
 {
-	class Lesson
+	public class Lesson
 	{
 		public string Topic { get; set; }
 		public List<Atendence> AtendanceList { get; set; }

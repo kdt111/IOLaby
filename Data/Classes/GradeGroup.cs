@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IOLaby.Data.Classes
 {
-	class GradeGroup
+	public class GradeGroup
 	{
 		public int GradeWeight { get; set; }
 		public string GradeGroupName { get; set; }

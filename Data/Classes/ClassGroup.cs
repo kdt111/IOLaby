@@ -5,7 +5,7 @@ using IOLaby.Data.Users;
 
 namespace IOLaby.Data.Classes
 {
-	class ClassGroup
+	public class ClassGroup
 	{
 		public int ClassId { get; set; }
 		public string ClassName { get; set; }

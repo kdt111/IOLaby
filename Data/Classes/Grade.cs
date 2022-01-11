@@ -5,7 +5,7 @@ using IOLaby.Data.Users;
 
 namespace IOLaby.Data.Classes
 {
-	class Grade
+	public class Grade
 	{
 		public int Value { get; set;}
 		public Student Student { get; set; }

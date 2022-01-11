@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IOLaby.Data.Users
 {
-	abstract class BaseUser
+	public abstract class BaseUser
 	{
 		public string Login { get; set; }
 		public string Password { get; set; }

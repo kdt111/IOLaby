@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOLaby", "IOLaby.csproj", "{6A3BCC95-509A-4683-8EE0-BC30D93AE8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOLaby", "IOLaby.csproj", "{6A3BCC95-509A-4683-8EE0-BC30D93AE8EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOLabyTests", "..\IOLabyTests\IOLabyTests.csproj", "{FBF72949-2872-4075-8F6C-F6898274F1A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6A3BCC95-509A-4683-8EE0-BC30D93AE8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A3BCC95-509A-4683-8EE0-BC30D93AE8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A3BCC95-509A-4683-8EE0-BC30D93AE8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF72949-2872-4075-8F6C-F6898274F1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF72949-2872-4075-8F6C-F6898274F1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF72949-2872-4075-8F6C-F6898274F1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF72949-2872-4075-8F6C-F6898274F1A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
