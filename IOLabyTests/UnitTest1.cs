@@ -1,15 +1,18 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using IOLaby.Data;
+using NUnit.Framework;
 
 namespace IOLabyTests
 {
-	[TestClass]
-	public class UnitTest1
+	public class Tests
 	{
-		[TestMethod]
-		public void TestMethod1()
+		[SetUp]
+		public void Setup()
 		{
-			Database database = new Database();
+		}
+
+		[Test]
+		public void Test1()
+		{
+			Assert.AreEqual(true, true);
 		}
 	}
 }

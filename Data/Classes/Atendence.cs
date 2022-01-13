@@ -5,7 +5,7 @@ using IOLaby.Data.Users;
 
 namespace IOLaby.Data.Classes
 {
-	class Atendence
+	public class Atendence
 	{
 		public Student Student { get; set; }
 		public bool WasPresent { get; set; }

@@ -7,7 +7,7 @@ using IOLaby;
 
 namespace IOLaby.Interface
 {
-	class UserInterface
+	public class UserInterface
 	{
 		public void ClearScreen()
 		{

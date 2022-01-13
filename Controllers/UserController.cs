@@ -6,7 +6,7 @@ using IOLaby.Data.Users;
 
 namespace IOLaby.Controllers
 {
-	class UserController
+	public class UserController
 	{
 		private Database database;
 
