@@ -27,12 +27,12 @@ namespace IOLaby.Data
 			GenerateData();
 		}
 
-		public ClassGroup GetGroup(BaseUser user, int groupId)
+		public virtual ClassGroup GetGroup(BaseUser user, int groupId)
 		{
 			return ClassGroupList.Find(cg => cg.ContainsStudent(user) && cg.ClassId == groupId);
 		}
 
-		public List<Atendence> GetAtendence(ClassGroup classGroup)
+		public virtual List<Atendence> GetAtendence(ClassGroup classGroup)
 		{
 			List<Atendence> returnVal = new List<Atendence>();
 			foreach (Lesson lesson in classGroup.LessonList)
@@ -41,7 +41,7 @@ namespace IOLaby.Data
 		}
 
 		//TEST: Michał
-		public Lesson GetLessonData(Teacher teacher, int lessonId)
+		public virtual Lesson GetLessonData(Teacher teacher, int lessonId)
 		{
 			foreach(ClassGroup classGroup in ClassGroupList)
 			{
@@ -58,7 +58,7 @@ namespace IOLaby.Data
 		}
 
 		//TEST: Damian
-		public Lesson GetLesson(int lessonId)
+		public virtual Lesson GetLesson(int lessonId)
 		{
 			foreach (ClassGroup classGroup in ClassGroupList)
 			{
@@ -71,7 +71,7 @@ namespace IOLaby.Data
 			return null;
 		}
 
-		public bool ModifyLesson(int lessonId, Lesson lesson)
+		public virtual bool ModifyLesson(int lessonId, Lesson lesson)
 		{
 			Lesson l = GetLesson(lessonId);
 			if (l == null)
@@ -82,13 +82,13 @@ namespace IOLaby.Data
 			return true;
 		}
 
-		public BaseUser FindUser(int userId)
+		public virtual BaseUser FindUser(int userId)
 		{
 			return UserList.Find(u => u.UserId == userId);
 		}
 
 		//TEST: Jan
-		public List<ClassGroup> GetUserClasses(int userId)
+		public virtual List<ClassGroup> GetUserClasses(int userId)
 		{
 			List<ClassGroup> returnVal = new List<ClassGroup>();
 			BaseUser user = FindUser(userId);
@@ -111,14 +111,16 @@ namespace IOLaby.Data
 
 			return returnVal;
 		}
-		
+
 		//TEST: Damian
-		public Dictionary<GradeGroup, Grade> GetUserGrades(int userId, int classGroupId)
+		public virtual Dictionary<GradeGroup, Grade> GetUserGrades(int userId, int classGroupId)
 		{
 			Dictionary<GradeGroup, Grade> returnValue = new Dictionary<GradeGroup, Grade>();
 			BaseUser user = FindUser(userId);
+			if (user == null)
+				return returnValue;
 			ClassGroup classGroup = GetGroup(user, classGroupId);
-			if (user == null || classGroup == null)
+			if (classGroup == null)
 				return returnValue;
 
 			foreach(GradeGroup gradeGroup in classGroup.GradeGroupList)
@@ -137,12 +139,14 @@ namespace IOLaby.Data
 		}
 
 		//TEST: Michał
-		public Dictionary<Lesson, Atendence> GetUserAtendances(int userId, int classGroupId)
+		public virtual Dictionary<Lesson, Atendence> GetUserAtendances(int userId, int classGroupId)
 		{
 			Dictionary<Lesson, Atendence> returnValue = new Dictionary<Lesson, Atendence>();
 			BaseUser user = FindUser(userId);
+			if (user == null)
+				return returnValue;
 			ClassGroup classGroup = GetGroup(user, classGroupId);
-			if (user == null || classGroup == null)
+			if (classGroup == null)
 				return returnValue;
 
 			foreach(Lesson lesson in classGroup.LessonList)
@@ -161,12 +165,12 @@ namespace IOLaby.Data
 		}
 
 		//TEST: Jan
-		public BaseUser ValidateUser(string login, string password)
+		public virtual BaseUser ValidateUser(string login, string password)
 		{
 			return UserList.Find(u => u.Login == login && u.Password == password);
 		}
-	
-		private void GenerateData()
+
+		public virtual void GenerateData()
 		{
 			Student student_1 = new Student("u1", "haslo", "Jan", "Kowalski", "test@test.com");
 			Student student_2 = new Student("u2", "haslo", "Michał", "Skiba", "michal.skiba@example.com");
