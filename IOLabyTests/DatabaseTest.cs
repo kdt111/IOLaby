@@ -79,5 +79,82 @@ namespace IOLabyTests
 			Dictionary<Lesson, Atendence> studentAtendences_3 = mockedDatabase_3.GetUserAtendances(student.UserId, classGroup.ClassId);
 			Assert.AreEqual(0, studentAtendences_3.Count);
 		}
+
+		// Damian's Tests
+		[Test]
+		public void TestGetLesson()
+        {
+			// setup variables for testing
+			Lesson lesson = database.ClassGroupList[0].LessonList[0];
+			
+			// situation with success
+			Assert.AreEqual(lesson, database.GetLesson(0));
+			// null scenarios - no lesson
+			Assert.IsNull(database.GetLesson(2137), "Found an instance of the lesson which is not included in a list");
+			// null scenario - when index is lover than  0
+			Assert.IsNull(database.GetLesson(-1), "Returned a lesson for index <0");
+
+        }
+		[Test]
+		public void TestGetUserGrades()
+        {
+			//setup 
+			Student student = (Student)database.UserList[0];
+			Student nullStudent = null;
+			ClassGroup classGroup = database.ClassGroupList[0];
+			ClassGroup nullClassGroup = null;
+
+
+			//success 
+			//mock
+			var mock1 = new Mock<Database>();
+			mock1.Setup(db => db.FindUser(student.UserId)).Returns(student);
+			mock1.Setup(db => db.GetGroup(student, classGroup.ClassId)).Returns(classGroup);
+			mock1.CallBase = true;
+			Database mockedDatabase1 = mock1.Object;
+
+			// test
+			Dictionary<GradeGroup, Grade> studentGrades1 = mockedDatabase1.GetUserGrades(student.UserId, classGroup.ClassId);
+			Assert.AreEqual(2, studentGrades1.Count);
+			//wrongId
+				//wrongStudent 
+			//setup
+			var mock2 = new Mock<Database>();
+			mock2.Setup(db => db.FindUser(student.UserId)).Returns(nullStudent);
+			mock2.CallBase = true;
+			Database mockedDatabase2 = mock2.Object;
+
+			// test
+			Dictionary<GradeGroup, Grade> studentGrades2 = mockedDatabase2.GetUserGrades(student.UserId, classGroup.ClassId);
+			Assert.AreEqual(0, studentGrades2.Count);
+				//wrongclass
+			//setup
+			var mock3 = new Mock<Database>();
+			mock3.Setup(db => db.FindUser(student.UserId)).Returns(student);
+			mock3.Setup(db => db.GetGroup(student, classGroup.ClassId)).Returns(nullClassGroup);
+			mock3.CallBase = true;
+			Database mockedDatabase_3 = mock3.Object;
+
+			//test
+			Dictionary<GradeGroup, Grade> studentGrades3 = mockedDatabase2.GetUserGrades(student.UserId, classGroup.ClassId);
+			Assert.AreEqual(0, studentGrades3.Count);
+
+
+			// wrong id and classGroup
+			//setup
+			var mock4 = new Mock<Database>();
+			mock4.Setup(db => db.FindUser(student.UserId)).Returns(nullStudent);
+			mock4.Setup(db => db.GetGroup(student, classGroup.ClassId)).Returns(nullClassGroup);
+			mock4.CallBase = true;
+			Database mockedDatabase4 = mock4.Object;
+
+			//test
+			Dictionary<GradeGroup, Grade> studentGrades4 = mockedDatabase2.GetUserGrades(student.UserId, classGroup.ClassId);
+			Assert.AreEqual(0, studentGrades4.Count);
+
+		}
+
+
+
 	}
 }
