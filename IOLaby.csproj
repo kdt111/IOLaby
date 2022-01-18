@@ -10,8 +10,14 @@
 	 <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="AcceptanceTests\**" />
+    <Compile Remove="FitNesse\**" />
     <Compile Remove="IOLabyTests\**" />
+    <EmbeddedResource Remove="AcceptanceTests\**" />
+    <EmbeddedResource Remove="FitNesse\**" />
     <EmbeddedResource Remove="IOLabyTests\**" />
+    <None Remove="AcceptanceTests\**" />
+    <None Remove="FitNesse\**" />
     <None Remove="IOLabyTests\**" />
   </ItemGroup>
 
