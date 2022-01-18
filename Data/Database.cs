@@ -24,6 +24,10 @@ namespace IOLaby.Data
 			ClassGroupList = new List<ClassGroup>();
 			UserList = new List<BaseUser>();
 
+			nextLessonIndex = 0;
+			nextUserIndex = 0;
+			nextClassIndex = 0;
+
 			GenerateData();
 		}
 

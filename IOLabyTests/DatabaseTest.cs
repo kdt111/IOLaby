@@ -18,7 +18,6 @@ namespace IOLabyTests
 		}
 
         // Michal's tests
-
         [Test]
         public void TestGetLessonData()
         {
@@ -34,7 +33,6 @@ namespace IOLabyTests
             // wrong lesson id scenario
             Assert.IsNull(database.GetLessonData(classGroup.Teacher, 2137));
         }
-
         [Test]
 		public void TestGetUserAtendances()
         {
@@ -154,7 +152,66 @@ namespace IOLabyTests
 
 		}
 
+		// Jan's Tests
+		[Test]
+		public void TestValidateUser()
+		{
+			BaseUser user = database.UserList[0];
 
+			// Success
+			Assert.AreEqual(user, database.ValidateUser(user.Login, user.Password));
 
+			// Wrong credentials
+			Assert.IsNull(database.ValidateUser(user.Login, "wrong-password"));
+			Assert.IsNull(database.ValidateUser("wrong-login", user.Password));
+
+			// No user
+			Assert.IsNull(database.ValidateUser("wrong-login", "wrong-password"));
+
+			// Wrong character case
+			Assert.IsNull(database.ValidateUser(user.Login.ToUpper(), user.Password));
+			Assert.IsNull(database.ValidateUser(user.Login, user.Password.ToUpper()));
+		}
+		[Test]
+		public void TestGetUserClasses()
+		{
+			Student student = (Student)database.UserList[0];
+			Teacher teacher = (Teacher)database.UserList[3];
+
+			Student nullStudent = null;
+			Teacher nullTeacher = null;
+
+			// Success student
+			Mock<Database> mock1 = new Mock<Database>();
+			mock1.Setup(db => db.FindUser(student.UserId)).Returns(student);
+			mock1.CallBase = true;
+
+			List<ClassGroup> groups = mock1.Object.GetUserClasses(student.UserId);
+			Assert.AreEqual(3, groups.Count);
+
+			// Success teacher
+			Mock<Database> mock2 = new Mock<Database>();
+			mock2.Setup(db => db.FindUser(teacher.UserId)).Returns(teacher);
+			mock2.CallBase = true;
+
+			groups = mock2.Object.GetUserClasses(teacher.UserId);
+			Assert.AreEqual(1, groups.Count);
+
+			// Wrong student id
+			Mock<Database> mock3 = new Mock<Database>();
+			mock3.Setup(db => db.FindUser(student.UserId)).Returns(nullStudent);
+			mock3.CallBase = true;
+
+			groups = mock3.Object.GetUserClasses(student.UserId);
+			Assert.AreEqual(0, groups.Count);
+
+			// Wrong teacher id
+			Mock<Database> mock4 = new Mock<Database>();
+			mock4.Setup(db => db.FindUser(teacher.UserId)).Returns(nullTeacher);
+			mock4.CallBase = true;
+
+			groups = mock4.Object.GetUserClasses(teacher.UserId);
+			Assert.AreEqual(0, groups.Count);
+		}
 	}
 }
