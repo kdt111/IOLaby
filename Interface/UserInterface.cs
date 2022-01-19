@@ -42,7 +42,7 @@ namespace IOLaby.Interface
 						Application.DisplayCalendar();
 						break;
 					case ConsoleKey.D3:
-						Application.ModifyLesson();
+						Application.ModifyLessonInterface();
 						break;
 					case ConsoleKey.Escape: // Wyście z pętli - wyjście z aplikacji
 						return;

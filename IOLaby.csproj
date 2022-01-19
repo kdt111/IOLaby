@@ -9,6 +9,7 @@
 	 <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	 <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="AcceptanceTests\**" />
     <Compile Remove="FitNesse\**" />
@@ -30,6 +31,7 @@
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.0" />
+    <PackageReference Include="SpecFlow" Version="3.9.40" />
   </ItemGroup>
 
 </Project>

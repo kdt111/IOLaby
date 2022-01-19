@@ -8,7 +8,7 @@ using IOLaby.Data.Classes;
 
 namespace IOLaby
 {
-	class Application
+	public class Application
 	{
 		private static UserInterface userInterface = new UserInterface();
 		private static Database database = new Database();
@@ -130,7 +130,7 @@ namespace IOLaby
             }
 		}
 
-		static public void ModifyLesson()
+		static public void ModifyLessonInterface()
         {
 			if(user is Teacher)
             {
@@ -141,8 +141,7 @@ namespace IOLaby
 				topic = Console.ReadLine();
 				Console.Write("Podaj nową datę lekcji: ");
 				date = Console.ReadLine();
-				Lesson lesson = new Lesson(topic, date);
-				bool status = classesController.ModifyLesson(lessonid, lesson);
+				bool status = ModifyLesson(lessonid, topic, date);
                 if (status)
                 {
 					Console.WriteLine("Operacja modyfikacji lekcji powiodła się");
@@ -156,5 +155,11 @@ namespace IOLaby
 				Console.WriteLine("Nie masz dostępu do tej akcji");
 			}
         }
+
+		static public bool ModifyLesson(int lessonId, string newTopic, string newDate)
+        {
+			Lesson lesson = new Lesson(newTopic, newDate);
+			return classesController.ModifyLesson(lessonId, lesson);
+		}
 	}
 }

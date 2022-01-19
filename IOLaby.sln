@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOLaby", "IOLaby.csproj", "{6A3BCC95-509A-4683-8EE0-BC30D93AE8EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOLabyTests", "IOLabyTests\IOLabyTests.csproj", "{F367CD18-C3A1-4279-803B-9C634D74B31E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTests", "AcceptanceTests\AcceptanceTests.csproj", "{8C8B4A53-6CE0-41D6-946F-F2F10FA07B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlow ATests", "..\SpecFlow ATests\SpecFlow ATests.csproj", "{5FFD5054-6DFB-4376-81E5-CAF1A36156DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F367CD18-C3A1-4279-803B-9C634D74B31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F367CD18-C3A1-4279-803B-9C634D74B31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F367CD18-C3A1-4279-803B-9C634D74B31E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C8B4A53-6CE0-41D6-946F-F2F10FA07B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C8B4A53-6CE0-41D6-946F-F2F10FA07B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C8B4A53-6CE0-41D6-946F-F2F10FA07B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C8B4A53-6CE0-41D6-946F-F2F10FA07B68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFD5054-6DFB-4376-81E5-CAF1A36156DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFD5054-6DFB-4376-81E5-CAF1A36156DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFD5054-6DFB-4376-81E5-CAF1A36156DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFD5054-6DFB-4376-81E5-CAF1A36156DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
