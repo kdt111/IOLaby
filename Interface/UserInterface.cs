@@ -36,7 +36,7 @@ namespace IOLaby.Interface
 				switch (key)
 				{
 					case ConsoleKey.D1:
-						Application.DisplayGroup();
+						Application.DisplayGroupInterface();
 						break;
 					case ConsoleKey.D2:
 						Application.DisplayCalendar();
