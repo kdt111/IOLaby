@@ -39,7 +39,7 @@ namespace IOLaby.Interface
 						Application.DisplayGroupInterface();
 						break;
 					case ConsoleKey.D2:
-						Application.DisplayCalendar();
+						Application.DisplayCalendarInterface();
 						break;
 					case ConsoleKey.D3:
 						Application.ModifyLessonInterface();

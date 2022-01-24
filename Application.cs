@@ -126,11 +126,24 @@ namespace IOLaby
 
         }
 
-		static public void DisplayCalendar()
+		static public void DisplayCalendarInterface()
         {
-			List<ClassGroup> userClasses = classesController.GetUserClasses(user.UserId);
-			List<KeyValuePair<string, DateTime>> calendarEntries = new List<KeyValuePair<string, DateTime>>();
+			var calendar = DisplayCalendar(user);
 			Console.WriteLine($"Kalendarz użytkownika {user.FirstName} {user.LastName}:");
+			foreach (var calendarEntry in calendar)
+			{
+				Console.WriteLine(calendarEntry.Key);
+			}
+		}
+
+		static public List<KeyValuePair<string, DateTime>> DisplayCalendar(BaseUser user)
+        {
+			List<KeyValuePair<string, DateTime>> calendarEntries = new List<KeyValuePair<string, DateTime>>();
+			if (user == null)
+				return calendarEntries;
+
+			List<ClassGroup> userClasses = classesController.GetUserClasses(user.UserId);
+			
 			foreach (ClassGroup classGroup in userClasses)
 			{
 				foreach (Lesson lesson in classGroup.LessonList)
@@ -139,10 +152,7 @@ namespace IOLaby
 				}
 			}
 			calendarEntries.Sort((ce1, ce2) => ce1.Value.CompareTo(ce2.Value));
-			foreach(var calendarEntry in calendarEntries)
-            {
-				Console.WriteLine(calendarEntry.Key);
-            }
+			return calendarEntries;
 		}
 
 		static public void ModifyLessonInterface()
