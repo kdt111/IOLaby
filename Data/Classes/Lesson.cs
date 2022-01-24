@@ -25,7 +25,11 @@ namespace IOLaby.Data.Classes
 
 		public void SetLessonDate(string date)
 		{
-			LessonDate = DateTime.Parse(date);
+			Boolean valid = DateTime.TryParse(date, out DateTime lessonDate);
+            if (valid)
+            {
+				LessonDate = lessonDate;
+            }
 		}
 
 		public void MarkAtendence(Student student, bool wasPresent)

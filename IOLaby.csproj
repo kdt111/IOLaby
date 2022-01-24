@@ -14,12 +14,15 @@
     <Compile Remove="AcceptanceTests\**" />
     <Compile Remove="FitNesse\**" />
     <Compile Remove="IOLabyTests\**" />
+    <Compile Remove="SpecFlow ATests\**" />
     <EmbeddedResource Remove="AcceptanceTests\**" />
     <EmbeddedResource Remove="FitNesse\**" />
     <EmbeddedResource Remove="IOLabyTests\**" />
+    <EmbeddedResource Remove="SpecFlow ATests\**" />
     <None Remove="AcceptanceTests\**" />
     <None Remove="FitNesse\**" />
     <None Remove="IOLabyTests\**" />
+    <None Remove="SpecFlow ATests\**" />
   </ItemGroup>
 
   <ItemGroup>

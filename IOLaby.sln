@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOLaby", "IOLaby.csproj", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOLabyTests", "IOLabyTests\IOLabyTests.csproj", "{F367CD18-C3A1-4279-803B-9C634D74B31E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlow ATests", "..\SpecFlow-ATests\SpecFlow ATests.csproj", "{F583ED16-E780-4017-A85B-062AA5E1D92B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlow ATests", "..\SpecFlow ATests\SpecFlow ATests.csproj", "{03238F2F-779B-4BD0-808F-4B8F7AADEF92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F367CD18-C3A1-4279-803B-9C634D74B31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F367CD18-C3A1-4279-803B-9C634D74B31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F367CD18-C3A1-4279-803B-9C634D74B31E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F583ED16-E780-4017-A85B-062AA5E1D92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F583ED16-E780-4017-A85B-062AA5E1D92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F583ED16-E780-4017-A85B-062AA5E1D92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F583ED16-E780-4017-A85B-062AA5E1D92B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03238F2F-779B-4BD0-808F-4B8F7AADEF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03238F2F-779B-4BD0-808F-4B8F7AADEF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03238F2F-779B-4BD0-808F-4B8F7AADEF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03238F2F-779B-4BD0-808F-4B8F7AADEF92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

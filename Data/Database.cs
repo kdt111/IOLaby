@@ -78,7 +78,7 @@ namespace IOLaby.Data
 		public virtual bool ModifyLesson(int lessonId, Lesson lesson)
 		{
 			Lesson l = GetLesson(lessonId);
-			if (l == null)
+			if (l == null || lesson.LessonDate == DateTime.MinValue)
 				return false;
 			l.LessonDate = lesson.LessonDate;
 			l.Topic = lesson.Topic;
